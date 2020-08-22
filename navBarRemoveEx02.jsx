@@ -1,6 +1,6 @@
-// Ex 2 - remove any item from navbar with less than 2 in stock
+// Ex 2 - remove any item from navbar with less than minStock in stock
 // write out both the name and the number in stock in format apple:2
-function NavBar({ menuitems }) {
+function NavBar({ menuitems, minstock }) {
   const updatedList = menuitems.map((item, index) => {
     return <li key={index}>{item.name}</li>;
   });
@@ -12,9 +12,9 @@ const menuItems = [
   { name: "pineapple", instock: 3 },
   { name: "pear", instock: 0 },
   { name: "peach", instock: 3 },
-  { name: "orange", instock: 1 },
+  { name: "orange", instock: 1 }
 ];
 ReactDOM.render(
-  <NavBar menuitems={menuItems} />,
+  <NavBar menuitems={menuItems} minstock={2} />,
   document.getElementById("root")
 );
